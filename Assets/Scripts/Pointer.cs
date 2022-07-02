@@ -8,7 +8,7 @@ public class Pointer : MonoBehaviour
     [SerializeField] private Transform _aim;
     [SerializeField] private Camera _camera;
 
-    private void Update()
+    private void LateUpdate()
     {
         SetAimPosition();
         FollowAim();

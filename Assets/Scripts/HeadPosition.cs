@@ -9,5 +9,6 @@ public class HeadPosition : MonoBehaviour
     void Update()
     {
         transform.position = _target.position;
+        transform.rotation = _target.rotation;
     }
 }

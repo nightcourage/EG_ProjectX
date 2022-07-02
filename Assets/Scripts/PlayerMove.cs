@@ -7,9 +7,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private Transform _collider;
-    [SerializeField] private Transform _aim;
-    
+    [SerializeField] private Transform _collider; 
+
     [Header("Movement settings")]
     [SerializeField] private float _sideForce;
     [SerializeField] private float _verticalForce;
@@ -28,29 +27,11 @@ public class PlayerMove : MonoBehaviour
     {
         Jump();
         Sit();
-        RotatePlayer();
     }
 
     private void FixedUpdate()
     {
         Move();
-    }
-
-    private void RotatePlayer()
-    {
-        float aimRelativePosition = _aim.localPosition.x;
-        Quaternion finalDirection;
-        
-        if (aimRelativePosition < transform.position.x)
-        {
-            finalDirection = Quaternion.Euler(0, 50, 0);
-        }
-        else
-        {
-            finalDirection = Quaternion.Euler(0, -50, 0);
-        }
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, finalDirection, Time.deltaTime * 15f);
     }
 
     private void Move()
@@ -61,13 +42,18 @@ public class PlayerMove : MonoBehaviour
         if (_grounded == false)
         {
             speedMultiplier = 0.2f;
+            
+            if (_rigidbody.velocity.x > _maxSpeed && movementInput > 0)
+            {
+                speedMultiplier = 0;
+            }
+            
+            if (_rigidbody.velocity.x < _maxSpeed && movementInput <  0)
+            {
+                speedMultiplier = 0;
+            }
         }
 
-        if (Mathf.Abs(_rigidbody.velocity.x) > _maxSpeed && Mathf.Abs(movementInput) > 0)
-        {
-            speedMultiplier = 0;
-        }
-        
         _rigidbody.AddForce(movementInput * _sideForce * speedMultiplier,0f, 0f, ForceMode.VelocityChange);
 
         if (_grounded)
