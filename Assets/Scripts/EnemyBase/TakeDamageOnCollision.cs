@@ -6,6 +6,7 @@ using UnityEngine;
 public class TakeDamageOnCollision : MonoBehaviour
 {
     [SerializeField] private EnemyHealth _enemyHealth;
+    [SerializeField] private bool _dieOnAnyCollision = false; 
     
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,6 +16,11 @@ public class TakeDamageOnCollision : MonoBehaviour
             {
                 _enemyHealth.TakeDamage(1);
             }
+        }
+
+        if (_dieOnAnyCollision)
+        {
+            _enemyHealth.TakeDamage(10000);
         }
     }
 }
