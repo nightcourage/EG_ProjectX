@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _maxSpeed;
     
     [Header("Jumping Settings")]
-    [SerializeField] private bool _grounded;
+    private bool _grounded;
     [Range(0, 90)]
     [SerializeField] private float _allowableAngle;
 
@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
                 speedMultiplier = 0;
             }
             
-            if (_rigidbody.velocity.x < _maxSpeed && movementInput <  0)
+            if (_rigidbody.velocity.x < -_maxSpeed && movementInput <  0)
             {
                 speedMultiplier = 0;
             }
