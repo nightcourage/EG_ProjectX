@@ -20,7 +20,10 @@ public class TakeDamageOnTrigger : MonoBehaviour
 
         if (_dieOnAnyCollision)
         {
-            _enemyHealth.TakeDamage(10000);
+            if (other.isTrigger == false)
+            {
+                _enemyHealth.TakeDamage(10000);
+            }
         }
     }
 }

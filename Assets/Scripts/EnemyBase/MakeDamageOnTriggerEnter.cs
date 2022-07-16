@@ -17,9 +17,4 @@ public class MakeDamageOnTriggerEnter : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
 }
