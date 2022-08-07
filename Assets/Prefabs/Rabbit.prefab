@@ -98,14 +98,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349335348561514513}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4788572, z: 0.6257143}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.04, y: 0.27, z: 0.55}
   m_LocalScale: {x: 0.5714286, y: 0.5714286, z: 0.5714286}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527692400309584340}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
 --- !u!1 &1349335349674390212
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1349335348198057533}
   _timePeriod: 5
+  _triggerName: Attack
 --- !u!114 &1349335349674390264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,8 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d595b69fecb8411580e0fd7a8e35456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carrotPrefab: {fileID: 5552287471034411333, guid: 418432a724755400cb39a99a0d2157e5, type: 3}
-  _spawn: {fileID: 1349335348561514518}
+  _prefab: {fileID: 5552287471034411333, guid: 418432a724755400cb39a99a0d2157e5, type: 3}
+  _spawnPoint: {fileID: 1349335348561514518}
 --- !u!23 &2514274241515040161 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -5738234360753943650, guid: 35928a0b0514640918f4a11873c9daec, type: 3}

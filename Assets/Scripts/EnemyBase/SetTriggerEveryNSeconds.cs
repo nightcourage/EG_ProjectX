@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rabbit : MonoBehaviour
+public class SetTriggerEveryNSeconds : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private float _timePeriod; 
     private float _timer;
+
+    [SerializeField] private string _triggerName = "Attack";
 
     private void Update()
     {
@@ -16,7 +18,7 @@ public class Rabbit : MonoBehaviour
         if (_timer >= _timePeriod)
         {
             _timer = 0;
-            _animator.SetTrigger("Attack");
+            _animator.SetTrigger(_triggerName);
         }
     }
 }

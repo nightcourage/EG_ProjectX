@@ -13,6 +13,7 @@ public class Rocket : MonoBehaviour
     private void Start()
     {
         _playerTransform = FindObjectOfType<PlayerMove>().transform;
+        transform.position = new Vector3(3, 3, -0.1f); //погрешность минимальная, но это все равно не Z = 0, почему так? Как сделать полет "ровным"?
     }
 
     private void Update()

@@ -9,6 +9,7 @@ public class Carrot : MonoBehaviour
     
     void Start()
     {
+        transform.rotation = Quaternion.identity;
         Transform playerTransform = FindObjectOfType<PlayerHealth>().transform;
         Vector3 toPlayer = (playerTransform.position - transform.position).normalized;
 
