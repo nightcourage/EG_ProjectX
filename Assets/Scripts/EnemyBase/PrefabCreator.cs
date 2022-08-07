@@ -9,8 +9,6 @@ public class PrefabCreator : MonoBehaviour
 
     public void Create()
     {
-        //без понятия в чем прблема, но префаб создается с каким-то отклонением в сторону. В результате игрок не может попасть по ракете. Лучше всего видно на медведе.
-        //Просидел несколько часов так и не понял, где ошибка.
-        Instantiate(_prefab, _spawnPoint.position, _spawnPoint.localRotation);
+        Instantiate(_prefab, new Vector3(_spawnPoint.position.x, _spawnPoint.position.y, 0), _spawnPoint.rotation);
     }
 }

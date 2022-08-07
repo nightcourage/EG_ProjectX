@@ -9,7 +9,8 @@ public enum Direction
     Left,
     Right
 }
-
+//Свинку колбасит, нужно руками во время плей мода сменить направление, тогда все ок. В чем проблема не нашел.
+//Можно исправить поменяв стартовое знаечение направления, но это не решение. Хочу понять проблему.
 public class Walker : MonoBehaviour
 {
     [SerializeField] private Transform _leftTarget;
