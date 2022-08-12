@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4515845818729365875}
   - component: {fileID: 4515845818729365873}
   - component: {fileID: 4515845818729365872}
+  - component: {fileID: 873107539}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Untagged
@@ -55,8 +56,8 @@ MonoBehaviour:
   _leftTarget: {fileID: 4515845819220683580}
   _rightTarget: {fileID: 4515845819718135786}
   _speed: 3
-  _stopTime: 1
-  _currentDirection: 1
+  _stopTime: 0.5
+  _currentDirection: 0
   _rayStart: {fileID: 4515845819506268603}
   EventOnLeftTarget:
     m_PersistentCalls:
@@ -181,6 +182,19 @@ MonoBehaviour:
   - {fileID: 6332895745414677118}
   - {fileID: 7094608659576508102}
   - {fileID: 1164737483336000637}
+--- !u!114 &873107539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515845818729365876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3e537b44a484f2795f6d235fd37c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToActivate: 20
 --- !u!1 &4515845818732466497
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,10 +239,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.3899985
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.020827316, y: 0, z: 0}
 --- !u!114 &4515845818732466508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515845819220683583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.03, y: 0.1, z: 0}
+  m_LocalPosition: {x: -4.91, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,14 +324,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515845819506268602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.076, y: 0.276, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.029, y: 0.287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4515845818729365874}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &4515845819718135789
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515845819718135789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 0, z: 0}
+  m_LocalPosition: {x: 7.27, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
