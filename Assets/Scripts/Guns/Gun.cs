@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
 
     private void FireBullet()
     {
-        _timer += Time.deltaTime;
+        _timer += Time.unscaledDeltaTime;
         if (Input.GetMouseButton(0) && _timer > _attackSpeed)
         {
             Shot();
