@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5780045455982578408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4158931625089855824}
+  - component: {fileID: 1881408397697690816}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4158931625089855824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780045455982578408}
+  m_LocalRotation: {x: 0.6978769, y: -0.1138769, z: 0.11387684, w: 0.6978769}
+  m_LocalPosition: {x: 0.0000006042204, y: 0.03552984, z: 0.0000012107193}
+  m_LocalScale: {x: 1, y: 0.99999976, z: 0.99999976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6975888291602718406}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881408397697690816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780045455982578408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d595b69fecb8411580e0fd7a8e35456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7708125151863783237, guid: 5f20e4f8f24514005bc3eadef4334d9f, type: 3}
+  _spawnPoint: {fileID: 4158931625089855824}
 --- !u!1 &6975888290324565240
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +126,7 @@ Transform:
   m_Children:
   - {fileID: 7441613502501218839}
   - {fileID: 6975888290324565241}
+  - {fileID: 4158931625089855824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -108.535, y: -90, z: 90}
@@ -129,6 +176,21 @@ MonoBehaviour:
   EventOnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
+  EventOnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1881408397697690816}
+        m_TargetAssemblyTypeName: PrefabCreator, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6975888291602718400
 MonoBehaviour:
   m_ObjectHideFlags: 0
