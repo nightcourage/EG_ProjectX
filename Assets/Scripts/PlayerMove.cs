@@ -16,22 +16,37 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _maxSpeed;
     
     [Header("Jumping Settings")]
-    private bool _grounded;
+    [SerializeField] private bool _grounded = true;
     [Range(0, 90)]
     [SerializeField] private float _allowableAngle;
 
     [Header("Sitting settings")]
     [SerializeField] private float _scaleSpeed;
 
+    private int _jumpFrameCounter;
+
     private void Update()
     {
-        Jump();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_grounded)
+            {
+                Jump(); 
+            }
+        }
         Sit();
     }
 
     private void FixedUpdate()
     {
         Move();
+
+        _jumpFrameCounter += 1;
+        if (_jumpFrameCounter == 2)
+        {
+            _rigidbody.freezeRotation = false;
+            _rigidbody.AddRelativeTorque(0f, 0f, 20f, ForceMode.VelocityChange);
+        }
     }
 
     private void Move()
@@ -59,15 +74,14 @@ public class PlayerMove : MonoBehaviour
         if (_grounded)
         {
             _rigidbody.AddForce(-_rigidbody.velocity.x * _friction, 0f, 0f, ForceMode.VelocityChange);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 15f);
         }
     }
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _grounded)
-        {
-            _rigidbody.AddForce(0f, _verticalForce, 0f, ForceMode.VelocityChange);
-        }
+        _rigidbody.AddForce(0f, _verticalForce, 0f, ForceMode.VelocityChange);
+        _jumpFrameCounter = 0;
     }
 
     private void Sit()
@@ -94,6 +108,7 @@ public class PlayerMove : MonoBehaviour
             if (currentAngle < _allowableAngle)
             {
                 _grounded = true;
+                _rigidbody.freezeRotation = true;
             }
         }
     }

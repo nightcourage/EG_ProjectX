@@ -16,8 +16,8 @@ public class Body : MonoBehaviour
     {
         float x = Mathf.Clamp( _aim.position.x - transform.position.x, -1, 1);
         float angle = -x * 50f;
-        Quaternion finalDirection = Quaternion.Euler(0,angle, 0);
+        Quaternion finalDirection = Quaternion.Euler(transform.rotation.x,angle, transform.rotation.z);
         
-        transform.rotation = Quaternion.Lerp(transform.rotation, finalDirection, Time.deltaTime * 15f);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, finalDirection, Time.deltaTime * 15f);
     }
 }
